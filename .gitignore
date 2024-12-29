@@ -1,0 +1,42 @@
+# Dependency directories
+node_modules/
+          
+# Optional npm cache directory
+.npm/
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Private files
+*.pem
+
+# Coverage reports
+coverage/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Build directories
+dist/
+
+# Temporary files
+*.tmp
+
+# MacOS
+.DS_Store
+
+# Miscellaneous
+*.bak
+*.swp
+
+mawallet-node-*

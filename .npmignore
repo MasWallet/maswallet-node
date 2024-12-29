@@ -1,0 +1,37 @@
+# Dependency directories
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Coverage reports
+coverage/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+
+# Temporary files
+*.tmp
+
+# MacOS
+.DS_Store
+
+# Miscellaneous
+*.bak
+*.swp
+
+# Tests
+test/
+tests/
+*.spec.js
+*.test.js
+
+# Configuration files
+*.config.js
+tsconfig.json
