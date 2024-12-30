@@ -14,7 +14,7 @@ export class ApiClient {
     baseUrl: string;
   }) {
     this.client = axios.create({
-      baseURL: baseUrl || "https://wallet-api.maschain.com",
+      baseURL: baseUrl || "https://wallet-api.maschain.com/api",
       headers: {
         client_id: `${apiClientId}`,
         client_secret: `${apiClientSecret}`,

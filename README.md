@@ -88,7 +88,7 @@ The `ApiClient` supports the following configuration options:
 |------------------|----------|----------------------------------|-------------------------------------------|
 | `apiClientId`    | `string` | `undefined`                      | Your MasWallet API client ID.             |
 | `apiClientSecret`| `string` | `undefined`                      | Your MasWallet API client secret.         |
-| `baseUrl`        | `string` | `https://api.maschain.com`       | Base URL for the MasWallet API.           |
+| `baseUrl`        | `string` | `https://api.maschain.com/api`       | Base URL for the MasWallet API.           |
 | `timeout`        | `number` | `5000`                           | Request timeout in milliseconds.          |
 
 ---
