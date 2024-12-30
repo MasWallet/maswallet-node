@@ -1,18 +1,19 @@
 import axios, { type AxiosInstance } from "axios";
-import type { LoginSession, TransactionSession } from "./types";
+import type {
+  LoginSession,
+  TransactionSession,
+  ApiClientConfig,
+  CreateLoginSessionParams,
+  VerifyLoginSignatureParams,
+  CreateTransactionSessionParams,
+  CreateTransactionSessionResponse,
+} from "./types";
 
 export class ApiClient {
   private client: AxiosInstance;
 
-  constructor({
-    apiClientId,
-    apiClientSecret,
-    baseUrl,
-  }: {
-    apiClientId: string;
-    apiClientSecret: string;
-    baseUrl: string;
-  }) {
+  constructor(config: ApiClientConfig) {
+    const { apiClientId, apiClientSecret, baseUrl } = config;
     this.client = axios.create({
       baseURL: baseUrl || "https://wallet-api.maschain.com/api",
       headers: {
@@ -24,19 +25,16 @@ export class ApiClient {
   }
 
   // Method: Initiate a Login Session
-  async createLoginSession(data: {
-    redirectUrl: string;
-  }): Promise<LoginSession> {
-    console.log(data);
+  async createLoginSession(
+    data: CreateLoginSessionParams
+  ): Promise<LoginSession> {
     const response = await this.client.post("/dapp/initiate-login", data);
     return response.data;
   }
 
-  async verifyLoginSignature(data: {
-    nonce: string;
-    signature: string;
-    walletAddress: string;
-  }): Promise<LoginSession> {
+  async verifyLoginSignature(
+    data: VerifyLoginSignatureParams
+  ): Promise<LoginSession> {
     const response = await this.client.post(
       "/dapp/verify-login-signature",
       data
@@ -45,13 +43,9 @@ export class ApiClient {
   }
 
   // Method: Create a Transaction Session
-  async createTransactionSession(data: {
-    walletAddress: string;
-    contractAddress: string;
-    abiFunction: string;
-    functionArgs: string[];
-    redirectUrl?: string;
-  }): Promise<TransactionSession> {
+  async createTransactionSession(
+    data: CreateTransactionSessionParams
+  ): Promise<CreateTransactionSessionResponse> {
     try {
       const response = await this.client.post(
         "/dapp/prepare-transaction",
