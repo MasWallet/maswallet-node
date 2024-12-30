@@ -17,13 +17,13 @@ A Node.js SDK for interacting with the [MasWallet API](https://wallet-docs.masch
 ## Installation
 
 ```bash
-npm install maswallet-node
+npm install maswallet-nodejs
 ```
 
 or
 
 ```bash
-yarn add maswallet-node
+yarn add maswallet-nodejs
 ```
 
 ---
@@ -34,10 +34,10 @@ yarn add maswallet-node
 
 ```typescript
 // Using TypeScript or ES Module
-import { ApiClient } from 'maswallet-node';
+import { ApiClient } from 'maswallet-nodejs';
 
 // Using CommonJS
-const { ApiClient } = require('maswallet-node');
+const { ApiClient } = require('maswallet-nodejs');
 ```
 
 ### Initialize the Client
